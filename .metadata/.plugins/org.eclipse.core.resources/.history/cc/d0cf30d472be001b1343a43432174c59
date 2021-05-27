@@ -1,0 +1,20 @@
+package com.springsoap.service;
+
+import org.springframework.stereotype.Service;
+
+import com.webserviceSoap.pojos.Acknowledgement;
+import com.webserviceSoap.pojos.CustomerRequest;
+
+
+@Service
+public class LoanEligibilityService {
+
+		public Acknowledgement checkLoanEligiblity(CustomerRequest request) {
+			
+			
+			
+			return null;
+			
+			
+		}
+}

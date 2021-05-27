@@ -1,0 +1,9 @@
+package com.springsoap.endpoint;
+
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
+
+@Endpoint
+public class SoapWebServiceEndpoint {
+
+		private static final String NAMESPACE="http://www.javatechie.com/spring/soap/api/loanEligibility";
+}

@@ -1,0 +1,5 @@
+package com.springsoap.api.config;
+
+public class ConfigurationClassBeService {
+
+}

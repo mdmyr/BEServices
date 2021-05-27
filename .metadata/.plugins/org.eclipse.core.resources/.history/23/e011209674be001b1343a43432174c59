@@ -1,0 +1,5 @@
+package com.springsoap.endpoint;
+
+public class SoapWebServiceEndpoint {
+
+}

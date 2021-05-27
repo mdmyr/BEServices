@@ -1,0 +1,23 @@
+package com.springsoap.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.webserviceSoap.pojos.Acknowledgement;
+import com.webserviceSoap.pojos.CustomerRequest;
+
+
+@Service
+public class LoanEligibilityService {
+
+		public Acknowledgement checkLoanEligiblity(CustomerRequest request) {
+			Acknowledgement ack = new Acknowledgement();
+			List<String> eligibitly= ack.getCriteriaMismatch(); //get the eligiblity
+ 			
+			
+			return null;//returns the ack
+			
+			
+		}
+}
