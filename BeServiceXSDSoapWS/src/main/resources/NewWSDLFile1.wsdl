@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/NewWSDLFile1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NewWSDLFile1" targetNamespace="http://www.example.org/NewWSDLFile1/" xmlns:xsd1="urn:bes-external-call.informatica.mdm">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/NewWSDLFile1/">
+            <xsd:import schemaLocation="target/classes/BeValidation.xsd" namespace="urn:bes-external-call.informatica.mdm"></xsd:import>
+            <xsd:element name="NewPersonValidate">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="input" type="xsd1:ExternalCallRequest" />
+          	<xsd:element name="output" type="xsd1:ExternalCallResponse"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewPersonValidateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    targetNamespace="urn:bes-external-call.informatica.mdm"
+                    xmlns:exc="urn:bes-external-call.informatica.mdm">
+
+            <xsd:complexType name="ExternalCallRequest">
+                <xsd:sequence>
+                    <xsd:element name="header" type="exc:Header" maxOccurs="1"/>
+                    <xsd:element name="trigger" type="exc:Trigger" maxOccurs="1"/>
+                    <xsd:element name="serviceCall" type="exc:ServiceCall" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="ExternalCallResponse">
+                <xsd:choice>
+                    <xsd:element name="serviceCall" type="exc:ServiceCall" maxOccurs="1"/>
+                    <xsd:element name="serviceError" type="exc:ServiceError" maxOccurs="1"/>
+                </xsd:choice>
+            </xsd:complexType>
+
+            <xsd:complexType name="Password">
+                <xsd:sequence>
+                    <xsd:element name="password" type="xsd:string" maxOccurs="1"/>
+                    <xsd:element name="encrypted" type="xsd:boolean" maxOccurs="1" default="false"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Header">
+                <xsd:sequence>
+                    <xsd:element name="orsId" type="xsd:string" maxOccurs="1"/>
+                    <xsd:element name="user" type="xsd:string" maxOccurs="1"/>
+                    <xsd:element name="role" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="password" type="exc:Password" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="payload" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="reposVersion" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="Trigger">
+                <xsd:sequence>
+                    <xsd:element name="businessEntity" type="xsd:string" maxOccurs="1"/>
+                    <xsd:element name="servicePhase" type="xsd:string" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="ServiceCall">
+                <xsd:sequence>
+                    <xsd:element name="objectXml" type="xsd:string" maxOccurs="1"/>
+                    <xsd:element name="parameter" type="exc:Parameter" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="ServiceError">
+                <xsd:sequence>
+                    <xsd:element name="code" type="xsd:string" maxOccurs="1"/>
+                    <xsd:element name="message" type="xsd:string" maxOccurs="1"/>
+                    <xsd:element name="detailsXml" type="xsd:string" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="Parameter">
+                <xsd:choice minOccurs="0" maxOccurs="1">
+                    <xsd:element name="stringValue" type="xsd:string"/>
+                    <xsd:element name="intValue" type="xsd:int"/>
+                    <xsd:element name="doubleValue" type="xsd:double"/>
+                    <xsd:element name="dateValue" type="xsd:dateTime"/>
+                    <xsd:element name="booleanValue" type="xsd:boolean"/>
+                    <xsd:element name="xmlValue" type="xsd:string"/>
+                </xsd:choice>
+                <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="NewPersonValidateRequest">
+    <wsdl:part element="tns:NewPersonValidate" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="NewPersonValidateResponse">
+    <wsdl:part element="tns:NewPersonValidateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="NewWSDLFile1">
+    <wsdl:operation name="NewPersonValidate">
+      <wsdl:input message="tns:NewPersonValidateRequest"/>
+      <wsdl:output message="tns:NewPersonValidateResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NewWSDLFile1SOAP" type="tns:NewWSDLFile1">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="NewPersonValidate">
+      <soap:operation soapAction="http://www.example.org/NewWSDLFile1/NewPersonValidate"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NewWSDLFile1">
+    <wsdl:port binding="tns:NewWSDLFile1SOAP" name="NewWSDLFile1SOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -111,7 +111,7 @@
     </wsdl:binding>
     <wsdl:service name="CustomLogicService">
         <wsdl:port name="CustomLogicServicePort" binding="tns:CustomLogicServicePortBinding">
-            <soap:address location="http://localhost:8080/bes-external-call/customLogicService"/>
+            <soap:address location="http://localhost:9092/bes-external-call/customLogicService"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>

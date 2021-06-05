@@ -77,11 +77,11 @@
 				</executions>
 				<configuration>
 					<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-					<generatePackage>com.webserviceSoap.pojos</generatePackage>
+					<generatePackage>com.springsoapBe.api.poje</generatePackage>
 					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
 					<schemaIncludes>
 						<include>*.xsd</include>
-						<include>*.wsdl</include>
+						
 					</schemaIncludes>
 				</configuration>
 			</plugin>

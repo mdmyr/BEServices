@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/NewWSDLFile1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NewWSDLFile1" targetNamespace="http://www.example.org/NewWSDLFile1/" xmlns:xsd1="urn:bes-external-call.informatica.mdm">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/NewWSDLFile1/">
+            <xsd:import schemaLocation="target/classes/BeValidation.xsd" namespace="urn:bes-external-call.informatica.mdm"></xsd:import>
+            <xsd:element name="NewPersonValidate">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="input" type="xsd1:ExternalCallRequest" />
+          	<xsd:element name="output" type="xsd1:ExternalCallResponse"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewPersonValidateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import namespace="urn:bes-external-call.informatica.mdm"
+    		schemaLocation="src/main/resources/BeValidation.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="NewPersonValidateRequest">
+    <wsdl:part element="xsd1:CustomerRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="NewPersonValidateResponse">
+    <wsdl:part element="tns:NewPersonValidateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="NewWSDLFile1">
+    <wsdl:operation name="NewPersonValidate">
+      <wsdl:input message="tns:NewPersonValidateRequest"/>
+      <wsdl:output message="tns:NewPersonValidateResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NewWSDLFile1SOAP" type="tns:NewWSDLFile1">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="NewPersonValidate">
+      <soap:operation soapAction="http://www.example.org/NewWSDLFile1/NewPersonValidate"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NewWSDLFile1">
+    <wsdl:port binding="tns:NewWSDLFile1SOAP" name="NewWSDLFile1SOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

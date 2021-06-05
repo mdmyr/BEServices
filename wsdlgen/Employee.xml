@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Employees xmlns:tns="http://www.pfgpartyentity.com/Employee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.pfgpartyentity.com/Employee Employee.xsd ">
+  <tns:EmployeeName>tns:EmployeeName</tns:EmployeeName>
+  <tns:EmployeeID>tns:EmployeeID</tns:EmployeeID>
+  <tns:EmployeeSalary>0</tns:EmployeeSalary>
+</tns:Employees>

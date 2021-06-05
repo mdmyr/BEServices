@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="java"/>
+	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/commonj.sdo_2.1.1.v201112051852.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/commons-httpclient-2.0.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/commons-pool-1.3.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/eclipselink-2.6.3.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/gmbal-api-only.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/ha-api.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/informatica-bpm-adapter.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/javax.xml.soap-api-1.4.0.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/jaxb-api-2.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/jaxb-core.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/jaxws-api-2.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/jaxws-rt.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/management-api.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/mdm-spi.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/policy.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/resolver.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/siperian-api.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/siperian-common.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/siperian-server-pkiutil.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/stax-ex.jar"/>
+	<classpathentry kind="lib" path="D:/#VSCode/Java/BEService/BESExternalCall/lib/streambuffer.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

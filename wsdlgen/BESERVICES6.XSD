@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.pfgpartyentity.com/Employee"
+		elementFormDefault="qualified" 
+		xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:tns="http://www.pfgpartyentity.com/Employee">
+
+<element name="Request"  type="tns:ExternalCallRequest"></element>
+
+   <complexType name="ExternalCallRequest">
+    	<sequence>
+    		<element name="header" type="string" minOccurs="1" maxOccurs="1"/>
+            <element name="trigger" type="string" maxOccurs="1"/>
+            <element name="serviceCall" type="string" maxOccurs="1"/>
+    	</sequence>
+    </complexType>
+</schema>
